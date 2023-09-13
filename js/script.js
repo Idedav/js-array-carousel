@@ -6,6 +6,7 @@ const carouselWrapper= [
     'img/04.webp',
     'img/05.webp'
 ]
+const slicesImages = document.querySelector('.slices')
 const carouselImages = document.querySelector('.caurosel-img');
 let counterImg = 0
 // BUTTONS
@@ -15,30 +16,33 @@ const btnBot = document.querySelector('.btn-bottom')
 for (let i = 0; i < carouselWrapper.length; i++){
     const img = carouselWrapper[i]
     carouselImages.innerHTML += `<img src=${img} class='item hide'>`
+    slicesImages.innerHTML += `<img src=${img} class='slice'>`
 }
+    const slicesWrapper = document.getElementsByClassName('slice')
+    slicesWrapper[0].classList.add('active')
     const itemsWrapper = document.getElementsByClassName('item');
     itemsWrapper[0].classList.remove('hide')
 
     btnBot.addEventListener('click', function(){
+        itemsWrapper[counterImg].classList.add('hide')
+        slicesWrapper[counterImg].classList.remove('active')
         if(counterImg != itemsWrapper.length - 1){
-            itemsWrapper[counterImg].classList.add('hide')
             counterImg++
-            itemsWrapper[counterImg].classList.remove('hide')
         }else{
-            itemsWrapper[counterImg].classList.add('hide')
             counterImg = 0
-            itemsWrapper[counterImg].classList.remove('hide')
         }
+        slicesWrapper[counterImg].classList.add('active')
+        itemsWrapper[counterImg].classList.remove('hide')
     })
 
     btnTop.addEventListener('click', function(){
+        itemsWrapper[counterImg].classList.add('hide')
+        slicesWrapper[counterImg].classList.remove('active')
         if(counterImg != 0){
-            itemsWrapper[counterImg].classList.add('hide')
             counterImg--
-            itemsWrapper[counterImg].classList.remove('hide')
         }else{
-            itemsWrapper[counterImg].classList.add('hide')
             counterImg = itemsWrapper.length - 1
-            itemsWrapper[counterImg].classList.remove('hide')
         }
+        slicesWrapper[counterImg].classList.add('active')
+        itemsWrapper[counterImg].classList.remove('hide')
     })

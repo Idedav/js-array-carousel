@@ -14,11 +14,12 @@
 .caurosel{
     width: 1000px;
     height: 500px;
-    background-color: white;
+    background-color: black;
+    display: flex;
     position: relative;
 }
 .caurosel-img{
-    width: 100%;
+    width: 80%;
     height: 100%;
 }
 
@@ -28,15 +29,33 @@
     object-fit: cover;
 }
 
+.slices{
+    width: 20%;
+    height: 100%;
+}
+
+.slices img{
+    width: 100%;
+    height: calc(100% / 5);
+    object-fit: cover;
+    filter: opacity(50%);
+}
+
+img.active{
+    border: 5px solid white;
+    filter: opacity(100%);
+}
+
 button{
     width: 30px;
     height: 30px;
     border: none;
     border-radius: 50%;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 80px;
+    z-index: 1;
 }
+
 
 .btn-top{
     top: 15px;
