@@ -20,16 +20,25 @@ for (let i = 0; i < carouselWrapper.length; i++){
     itemsWrapper[0].classList.remove('hide')
 
     btnBot.addEventListener('click', function(){
-      itemsWrapper[counterImg].classList.add('hide')
-      counterImg++
-      itemsWrapper[counterImg].classList.remove('hide')
-      if(counterImg === itemsWrapper.length){
-        btnBot.classList.add('hide')
-      }
+        if(counterImg != itemsWrapper.length - 1){
+            itemsWrapper[counterImg].classList.add('hide')
+            counterImg++
+            itemsWrapper[counterImg].classList.remove('hide')
+        }else{
+            itemsWrapper[counterImg].classList.add('hide')
+            counterImg = 0
+            itemsWrapper[counterImg].classList.remove('hide')
+        }
     })
 
     btnTop.addEventListener('click', function(){
-        itemsWrapper[counterImg].classList.add('hide')
-        counterImg--
-        itemsWrapper[counterImg].classList.remove('hide')
+        if(counterImg != 0){
+            itemsWrapper[counterImg].classList.add('hide')
+            counterImg--
+            itemsWrapper[counterImg].classList.remove('hide')
+        }else{
+            itemsWrapper[counterImg].classList.add('hide')
+            counterImg = itemsWrapper.length - 1
+            itemsWrapper[counterImg].classList.remove('hide')
+        }
     })
