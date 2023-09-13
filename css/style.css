@@ -1,0 +1,47 @@
+.dc-container{
+    width: 100%;
+    height: 100vh;
+    background-color: slateblue;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.hide{
+    display: none;
+}
+
+.caurosel{
+    width: 1000px;
+    height: 500px;
+    background-color: white;
+    position: relative;
+}
+.caurosel-img{
+    width: 100%;
+    height: 100%;
+}
+
+.caurosel-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+button{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn-top{
+    top: 15px;
+}
+
+.btn-bottom{
+    bottom: 15px;
+}
