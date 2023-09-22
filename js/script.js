@@ -24,25 +24,33 @@ for (let i = 0; i < carouselWrapper.length; i++){
     itemsWrapper[0].classList.remove('hide')
 
     btnBot.addEventListener('click', function(){
-        itemsWrapper[counterImg].classList.add('hide')
-        slicesWrapper[counterImg].classList.remove('active')
+        next();
         if(counterImg != itemsWrapper.length - 1){
             counterImg++
         }else{
             counterImg = 0
         }
-        slicesWrapper[counterImg].classList.add('active')
-        itemsWrapper[counterImg].classList.remove('hide')
+        prev();
     })
 
     btnTop.addEventListener('click', function(){
-        itemsWrapper[counterImg].classList.add('hide')
-        slicesWrapper[counterImg].classList.remove('active')
+        next();
         if(counterImg != 0){
             counterImg--
         }else{
             counterImg = itemsWrapper.length - 1
         }
+        prev();
+    })
+
+    // FUNCTIONS
+
+    function next(){
+        itemsWrapper[counterImg].classList.add('hide')
+        slicesWrapper[counterImg].classList.remove('active')
+    }
+
+    function prev(){
         slicesWrapper[counterImg].classList.add('active')
         itemsWrapper[counterImg].classList.remove('hide')
-    })
+    }
